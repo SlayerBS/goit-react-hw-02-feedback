@@ -12,14 +12,28 @@ class App extends Component {
     this.setState((prevState) => ({ [mark]: prevState[mark] + 1 }));
     console.log(this.state);
   };
-  // countTotalFeedback() {}
+  countTotalFeedback = () => {
+    return this.state.good + this.state.neutral + this.state.bad;
+  };
 
-  // countPositiveFeedbackPercentage() {}
+  countPositiveFeedbackPercentage() {
+    console.log(this.state.good);
+    console.log(this.countTotalFeedback());
+    return (this.state.good / this.countTotalFeedback()) * 100;
+  }
 
   render() {
+    const total = this.countTotalFeedback();
+    const percentage = this.countPositiveFeedbackPercentage();
+    console.log(percentage);
     return (
       <>
-        <Statistics stats={this.state} onFeedback={this.onFeedback} />
+        <Statistics
+          stats={this.state}
+          onFeedback={this.onFeedback}
+          total={total}
+          percentage={percentage}
+        />
       </>
     );
   }

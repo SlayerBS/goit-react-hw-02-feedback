@@ -1,6 +1,5 @@
 import logo from "../../images/logoEspresso.png";
-const Statistics = ({ stats, onFeedback }) => {
-  console.log({ stats });
+const Statistics = ({ stats, onFeedback, total, percentage }) => {
   return (
     <>
       <img src={logo} />
@@ -16,6 +15,8 @@ const Statistics = ({ stats, onFeedback }) => {
           <li>Goog{stats.good}</li>
           <li>Neutral{stats.neutral}</li>
           <li>Bad{stats.bad}</li>
+          <li>Total{total}</li>
+          <li>Positive feedback{percentage}</li>
         </ul>
       </div>
     </>
