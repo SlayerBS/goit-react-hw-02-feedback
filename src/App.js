@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Statistics from "./components/Statistics";
-// import logo from "./logo.svg";
+import FeedbackOptions from "./components/FeedbackOptions";
+import Section from "./components/Section";
+import Header from "./components/Header";
+import { options } from "./data/options";
 
 class App extends Component {
   state = {
@@ -8,9 +11,10 @@ class App extends Component {
     neutral: 0,
     bad: 0,
   };
-  onFeedback = (mark) => {
+  onLeaveFeedback = ({ target }) => {
+    console.log(target);
+    const { mark } = target.dataset;
     this.setState((prevState) => ({ [mark]: prevState[mark] + 1 }));
-    console.log(this.state);
   };
   countTotalFeedback = () => {
     return this.state.good + this.state.neutral + this.state.bad;
@@ -19,7 +23,7 @@ class App extends Component {
   countPositiveFeedbackPercentage() {
     console.log(this.state.good);
     console.log(this.countTotalFeedback());
-    return (this.state.good / this.countTotalFeedback()) * 100;
+    return Math.round((this.state.good / this.countTotalFeedback()) * 100);
   }
 
   render() {
@@ -28,12 +32,22 @@ class App extends Component {
     console.log(percentage);
     return (
       <>
-        <Statistics
-          stats={this.state}
-          onFeedback={this.onFeedback}
-          total={total}
-          percentage={percentage}
-        />
+        <Header />
+        <Section title="Please leave feedback">
+          <FeedbackOptions
+            options={options}
+            onLeaveFeedback={this.onLeaveFeedback}
+          />
+        </Section>
+        <Section title="Statistic">
+          <Statistics
+            good={this.state.good}
+            neutral={this.state.neutral}
+            bad={this.state.bad}
+            total={total}
+            percentage={percentage}
+          />
+        </Section>
       </>
     );
   }
