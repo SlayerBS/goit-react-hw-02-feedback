@@ -1,3 +1,7 @@
 import logo from "../../images/logoEspresso.png";
-const Header = () => <img src={logo} />;
+
+import styles from "./Header.module.css";
+const Header = () => (
+  <img src={logo} className={styles.img} alt="cafe espresso logo" />
+);
 export default Header;

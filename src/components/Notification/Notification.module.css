@@ -1,0 +1,13 @@
+.message {
+  margin: 0;
+  font-size: 28px;
+  animation: blink 1s infinite; /* Параметры анимации */
+}
+@keyframes blink {
+  from {
+    opacity: 1; /* Непрозрачный текст */
+  }
+  to {
+    opacity: 0.5; /* Прозрачный текст */
+  }
+}
