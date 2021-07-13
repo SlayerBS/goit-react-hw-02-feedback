@@ -12,7 +12,6 @@ class App extends Component {
     bad: 0,
   };
   onLeaveFeedback = ({ target }) => {
-    console.log(target);
     const { mark } = target.dataset;
     this.setState((prevState) => ({ [mark]: prevState[mark] + 1 }));
   };
@@ -21,15 +20,13 @@ class App extends Component {
   };
 
   countPositiveFeedbackPercentage() {
-    console.log(this.state.good);
-    console.log(this.countTotalFeedback());
     return Math.round((this.state.good / this.countTotalFeedback()) * 100);
   }
 
   render() {
     const total = this.countTotalFeedback();
     const percentage = this.countPositiveFeedbackPercentage();
-    console.log(percentage);
+
     return (
       <>
         <Header />
