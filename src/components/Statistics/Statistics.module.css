@@ -6,4 +6,32 @@
 }
 .item {
   margin-bottom: 10px;
+  font-weight: 800;
+  border: 1px solid grey;
+  border-radius: 5px;
+  background-color: honeydew;
+}
+
+.item:first-child {
+  color: green;
+}
+.item:nth-child(2) {
+  color: grey;
+}
+.item:nth-child(3) {
+  color: red;
+}
+.item:nth-child(4) {
+  color: blue;
+}
+.item:nth-child(5) {
+  color: green;
+}
+.item:active {
+  transition: 0.25s cubic-bezier(0.22, 0.64, 0.83, 0.67);
+  color: blueviolet;
+}
+.item:hover {
+  transition: 0.25s;
+  transform: scale(1.15);
 }

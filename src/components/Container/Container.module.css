@@ -1,0 +1,10 @@
+.Container {
+  max-width: 600px;
+  margin: 0 auto;
+
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+  background-size: cover;
+  background-image: url(https://image.freepik.com/free-vector/coffee-beans-seamless-pattern-sketch-style_1182-1332.jpg);
+}

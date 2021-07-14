@@ -4,6 +4,7 @@ import FeedbackOptions from "./components/FeedbackOptions";
 import Section from "./components/Section";
 import Header from "./components/Header";
 import { options } from "./data/options";
+import Container from "./components/Container";
 
 class App extends Component {
   state = {
@@ -28,7 +29,7 @@ class App extends Component {
     const percentage = this.countPositiveFeedbackPercentage();
 
     return (
-      <>
+      <Container>
         <Header />
         <Section title="Please leave feedback">
           <FeedbackOptions
@@ -45,7 +46,7 @@ class App extends Component {
             percentage={percentage}
           />
         </Section>
-      </>
+      </Container>
     );
   }
 }

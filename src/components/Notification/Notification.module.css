@@ -1,13 +1,16 @@
 .message {
   margin: 0;
-  font-size: 28px;
-  animation: blink 1s infinite; /* Параметры анимации */
+  font-size: 30px;
+  font-weight: 700;
+  color: brown;
+  animation: blink 750ms infinite;
+  background-color: honeydew;
 }
 @keyframes blink {
   from {
-    opacity: 1; /* Непрозрачный текст */
+    opacity: 1;
   }
   to {
-    opacity: 0.5; /* Прозрачный текст */
+    opacity: 0.2;
   }
 }
